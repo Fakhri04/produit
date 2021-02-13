@@ -56,6 +56,7 @@ private getDismissReason(reason: any): string {
             this.produit_data=[data, ...this.produit_data];
             this.gettProduit();
             
+            
           })
     }
     delete(id){
@@ -71,15 +72,20 @@ private getDismissReason(reason: any): string {
         this.service.update(produit).subscribe((data)=>{
           console.log(data);
           this.gettProduit();
+
+
           
         })};
         
         editProduct(product){
           this.myProduct=product
           this.editForm=true;
+          
 
         }
-      
+      close(){
+        this.editForm=false;
+      }
     }
   
   
